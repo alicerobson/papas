@@ -17,12 +17,12 @@ bool blockIdComparer(Identifier id1, Identifier id2) {
     return IdCoder::type(id1) < IdCoder::type(id2);
 }
 
-PFBlock::~PFBlock() {
+/*PFBlock::~PFBlock() {
   // //If I remove ~PFBlock and use the default destructor I get a seg fault under Gaudi
   //This is a mystery
   m_elementIds.clear();
   m_edges.clear();
-};
+};*/
 
 PFBlock::PFBlock(const Ids& element_ids, const Edges& edges, unsigned int index, char subtype)
     : m_id(IdCoder::makeId(index, IdCoder::kBlock, subtype, element_ids.size())), m_elementIds(element_ids) {
